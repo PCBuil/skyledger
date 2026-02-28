@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <meta name="google-adsense-account" content="ca-pub-1387858908695634">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script defer src="app.js"></script>
+    <title>SkyLedger – Weather Tracking and Forecast</title>
+
+    <meta name="description"
+        content="SkyLedger provides fast, accurate weather forecasts, current conditions, and location-based tracking." />
+
+    <meta name="robots" content="index, follow" />
+
+    <link rel="canonical" href="https://skyledger.siliconpulse.net/" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="SkyLedger – Weather Tracking and Forecast" />
+    <meta property="og:description"
+        content="Fast, accurate weather forecasts, current conditions, favorites, and alerts." />
+    <meta property="og:url" content="https://skyledger.siliconpulse.net/" />
+    <meta property="og:image" content="https://skyledger.siliconpulse.net/og.png" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="SkyLedger – Weather Tracking and Forecast" />
+    <meta name="twitter:description"
+        content="Fast, accurate weather forecasts, current conditions, favorites, and alerts." />
+    <meta name="twitter:image" content="https://skyledger.siliconpulse.net/og.png" />
+</head>
+
+<body>
+    <div class="bg-orb bg-orb-1" aria-hidden="true"></div>
+    <div class="bg-orb bg-orb-2" aria-hidden="true"></div>
+
+    <main class="app-shell">
+        <header class="topbar">
+            <div>
+                <h1>SkyLedger</h1>
+                <p class="subtitle">Search cities, monitor forecasts, save favorites, and track alerts.</p>
+            </div>
+            <div class="topbar-actions">
+                <a class="btn btn-secondary nav-link" href="about.html">About</a>
+                <label for="unitToggle" class="sr-only">Units</label>
+                <select id="unitToggle" class="unit-toggle">
+                    <option value="metric">Metric (C, km/h, mm)</option>
+                    <option value="imperial">Imperial (F, mph, in)</option>
+                </select>
+                <button id="geoBtn" class="btn btn-secondary" type="button">Use Current Location</button>
+            </div>
+        </header>
+
+        <section class="search-panel card">
+            <form id="searchForm" class="search-form">
+                <label for="cityInput" class="sr-only">City</label>
+                <input id="cityInput" name="city" type="text" placeholder="Search city (e.g., Tokyo, Paris, Seattle)"
+                    required />
+                <button class="btn" type="submit">Search</button>
+            </form>
+            <div id="searchResults" class="search-results" aria-live="polite"></div>
+        </section>
+
+        <section class="layout-grid">
+            <article class="card current-card">
+                <div class="card-header">
+                    <h2>Current Conditions</h2>
+                    <button id="favoriteBtn" class="btn btn-small" type="button" disabled>Save Favorite</button>
+                </div>
+                <p id="locationLabel" class="location-label">No location selected</p>
+                <div id="currentContent" class="current-content muted">Search for a city or use your location to begin.
+                </div>
+            </article>
+
+            <article class="card favorites-card">
+                <div class="card-header">
+                    <h2>Favorites</h2>
+                </div>
+                <ul id="favoritesList" class="favorites-list"></ul>
+            </article>
+
+            <article class="card hourly-card">
+                <div class="card-header">
+                    <h2>Hourly Forecast (next 24h)</h2>
+                </div>
+                <div id="hourlyContent" class="hourly-grid"></div>
+            </article>
+
+            <article class="card daily-card">
+                <div class="card-header">
+                    <h2>10-Day Forecast</h2>
+                </div>
+                <div id="dailyContent" class="daily-grid"></div>
+            </article>
+
+            <article class="card alerts-card">
+                <div class="card-header">
+                    <h2>Alerts</h2>
+                </div>
+                <div id="alertsContent" class="muted">No location selected.</div>
+            </article>
+
+            <article class="card charts-card">
+                <div class="card-header">
+                    <h2>Charts</h2>
+                </div>
+                <div class="chart-wrap">
+                    <canvas id="tempChart"></canvas>
+                </div>
+                <div class="chart-wrap">
+                    <canvas id="rainChart"></canvas>
+                </div>
+            </article>
+        </section>
+    </main>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1387858908695634"
+     crossorigin="anonymous"></script>
+</body>
+
+</html>

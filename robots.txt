@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://skyledger.siliconpulse.net/sitemap.xml

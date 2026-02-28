@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+    <title>About SkyLedger</title>
+    <meta name="description"
+        content="Learn what SkyLedger does and how it works, including data sources, features, and privacy details." />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://skyledger.siliconpulse.net/about.html" />
+</head>
+
+<body>
+    <div class="bg-orb bg-orb-1" aria-hidden="true"></div>
+    <div class="bg-orb bg-orb-2" aria-hidden="true"></div>
+
+    <main class="app-shell">
+        <header class="topbar">
+            <div>
+                <h1>About SkyLedger</h1>
+                <p class="subtitle">What it is and how it works.</p>
+            </div>
+            <div class="topbar-actions">
+                <a class="btn btn-secondary nav-link" href="index.html">Back to App</a>
+            </div>
+        </header>
+
+        <section class="card about-section">
+            <h2>What It Is</h2>
+            <p>
+                SkyLedger is a browser-based weather dashboard. You can search cities, view current conditions,
+                check hourly and daily forecasts, save favorite locations, and see active weather alerts.
+            </p>
+        </section>
+
+        <section class="card about-section">
+            <h2>How It Works</h2>
+            <ul class="about-list">
+                <li>You pick a city from search results, or use your current device location.</li>
+                <li>The app requests forecast data using the selected latitude/longitude.</li>
+                <li>Current conditions, hourly rows, 10-day forecast, and charts are rendered in the page.</li>
+                <li>For U.S. locations, active alerts are requested and displayed when available.</li>
+            </ul>
+        </section>
+
+        <section class="card about-section">
+            <h2>Data Sources</h2>
+            <ul class="about-list">
+                <li>Open-Meteo Geocoding API for city search and reverse geocoding.</li>
+                <li>Open-Meteo Forecast API for current, hourly, and daily weather values.</li>
+                <li>NOAA Weather.gov Alerts API for active U.S. alert feeds.</li>
+            </ul>
+        </section>
+
+        <section class="card about-section">
+            <h2>Saved Data and Privacy</h2>
+            <p>
+                Favorites, unit preference, and your last viewed location are stored in your browser's local storage
+                so the app can restore your settings on return visits.
+            </p>
+            <p class="muted">
+                Geolocation is only used when you press "Use Current Location" and depends on browser permission.
+            </p>
+        </section>
+    </main>
+</body>
+
+</html>

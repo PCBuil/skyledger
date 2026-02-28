@@ -1,0 +1,293 @@
+:root {
+  --bg: #f6f8f5;
+  --card: #ffffff;
+  --text: #132021;
+  --muted: #5b6b6c;
+  --accent: #0e7a68;
+  --accent-2: #ff9f43;
+  --border: #d6dfda;
+  --shadow: 0 10px 30px rgba(12, 25, 27, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Space Grotesk", sans-serif;
+  color: var(--text);
+  background: radial-gradient(circle at 10% 20%, #e3f5ea 0%, transparent 40%),
+    radial-gradient(circle at 90% 0%, #ffe7c8 0%, transparent 30%),
+    var(--bg);
+}
+
+.bg-orb {
+  position: fixed;
+  border-radius: 999px;
+  filter: blur(30px);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.bg-orb-1 {
+  width: 280px;
+  height: 280px;
+  background: rgba(14, 122, 104, 0.15);
+  top: 70px;
+  left: -90px;
+}
+
+.bg-orb-2 {
+  width: 240px;
+  height: 240px;
+  background: rgba(255, 159, 67, 0.2);
+  right: 0;
+  bottom: 80px;
+}
+
+.app-shell {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.topbar {
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+.topbar-actions {
+  display: flex;
+  gap: 0.6rem;
+  align-items: center;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(1.8rem, 2vw, 2.4rem);
+}
+
+.subtitle {
+  margin: 0.35rem 0 0;
+  color: var(--muted);
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  padding: 1rem;
+}
+
+.search-panel {
+  margin-bottom: 1rem;
+}
+
+.search-form {
+  display: flex;
+  gap: 0.5rem;
+}
+
+input {
+  width: 100%;
+  padding: 0.75rem 0.9rem;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  font: inherit;
+}
+
+.unit-toggle {
+  padding: 0.65rem 0.8rem;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  font: inherit;
+  background: #fff;
+}
+
+.btn {
+  display: inline-block;
+  border: 0;
+  border-radius: 10px;
+  background: var(--accent);
+  color: #fff;
+  padding: 0.7rem 1rem;
+  cursor: pointer;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.85rem;
+  text-decoration: none;
+}
+
+.btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.btn-secondary {
+  background: #1f2b2b;
+}
+
+.btn-small {
+  padding: 0.45rem 0.7rem;
+}
+
+.layout-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(12, 1fr);
+}
+
+.current-card { grid-column: span 8; }
+.favorites-card { grid-column: span 4; }
+.hourly-card,
+.daily-card,
+.alerts-card,
+.charts-card { grid-column: span 6; }
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.6rem;
+}
+
+h2 {
+  font-size: 1rem;
+  margin: 0;
+}
+
+.location-label {
+  margin: 0 0 0.8rem;
+  color: var(--muted);
+}
+
+.current-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+}
+
+.current-temp {
+  font-size: 2.3rem;
+  font-weight: 700;
+}
+
+.metrics {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(120px, 1fr));
+  gap: 0.35rem 1rem;
+  font-size: 0.95rem;
+}
+
+.hourly-grid,
+.daily-grid {
+  display: grid;
+  gap: 0.5rem;
+  max-height: 360px;
+  overflow: auto;
+}
+
+.hourly-item,
+.daily-item,
+.search-item,
+.favorite-item,
+.alert-item {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 0.6rem;
+  background: #fbfcfb;
+}
+
+.search-results {
+  margin-top: 0.75rem;
+  display: grid;
+  gap: 0.4rem;
+}
+
+.search-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.favorites-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.5rem;
+}
+
+.favorite-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.alert-title {
+  margin: 0 0 0.35rem;
+  color: #9b3a18;
+}
+
+.chart-wrap {
+  margin-bottom: 1rem;
+  height: 220px;
+}
+
+.muted {
+  color: var(--muted);
+}
+
+.about-section {
+  margin-bottom: 1rem;
+}
+
+.about-section p {
+  margin: 0.55rem 0 0;
+  line-height: 1.6;
+}
+
+.about-list {
+  margin: 0.55rem 0 0;
+  padding-left: 1.2rem;
+  line-height: 1.6;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+@media (max-width: 980px) {
+  .current-card,
+  .favorites-card,
+  .hourly-card,
+  .daily-card,
+  .alerts-card,
+  .charts-card {
+    grid-column: span 12;
+  }
+
+  .topbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .topbar-actions {
+    flex-wrap: wrap;
+  }
+}
